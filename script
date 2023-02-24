@@ -1,0 +1,43 @@
+#Reference:
+
+Mainfiles:  
+
+/home/bitnami/stack/wordpress
+/bitnami/wordpress/wp-content
+/bitnami/wordpress/wp-config.php
+
+WordPress configuration files are in the Apache VHOSTS folder
+/opt/bitnami/apache2/conf/vhosts/
+
+
+
+
+Get password to login to WP:
+
+cat bitnami_application_password 
+
+
+
+Certificate:
+
+sudo /opt/bitnami/bncert-tool
+
+#LAUNCH
+
+Edit servername:
+
+ServerName 3.8.209.177:80
+
+
+sudo vim bitnami/apache/conf/httpd.conf
+
+sudo wget https://dl-ssl.google.com/dl/linux/direct/mod-pagespeed-stable_current_amd64.deb
+sudo dpkg -i mod-pagespeed-stable_current_amd64.deb 
+sudo apt install -f
+
+
+
+FINAL END
+
+sudo service apache2 restart
+sudo reboot
