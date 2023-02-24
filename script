@@ -10,13 +10,30 @@ WordPress configuration files are in the Apache VHOSTS folder
 /opt/bitnami/apache2/conf/vhosts/
 
 
+Back and Edit Wp Config
+
+
+    1. Cd // ( to go to root) 
+sudo cp bitnami/wordpress/wp-config.php /bitnami/wordpress/wp-config.php.backup
+
+
+
+
+sudo vim /bitnami/wordpress/wp-config.php
+
+
+2. Press I to edit
+3. :wq to exit
 
 
 Get password to login to WP:
 
 cat bitnami_application_password 
 
+ServerName 3.8.209.177:80
 
+
+sudo vim bitnami/apache/conf/httpd.conf
 
 Certificate:
 
@@ -24,12 +41,11 @@ sudo /opt/bitnami/bncert-tool
 
 #LAUNCH
 
-Edit servername:
 
-ServerName 3.8.209.177:80
+sudo apt-get update
+sudo apt-get upgrade
 
 
-sudo vim bitnami/apache/conf/httpd.conf
 
 sudo wget https://dl-ssl.google.com/dl/linux/direct/mod-pagespeed-stable_current_amd64.deb
 sudo dpkg -i mod-pagespeed-stable_current_amd64.deb 
